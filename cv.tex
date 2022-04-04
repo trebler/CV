@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,a4paper]{moderncv}
+\documentclass[11pt,a4paper]{moderncv}
 \usepackage[utf8]{luainputenc}
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
@@ -9,7 +9,7 @@
 \moderncvcolor{black}
 \moderncvicons{awesome}
 
-\usepackage[scale=0.85]{geometry}
+\usepackage[scale=0.84]{geometry}
 \setlength{\hintscolumnwidth}{2.9cm}
 \AtBeginDocument{\recomputelengths}
 
@@ -17,11 +17,11 @@
 \title{Curriculum Vit\ae{}}
 \name{Andrey}{Trebler}
 \phone[mobile]{+47 45100719}
-\email{treblera@gmail.com}
+\email{andrey@trebler.dev}
 \address{Vestre Helleveien 5B}{4318 Sandnes}{Norway}
 \social[linkedin]{andreytrebler} 
 \social[github]{trebler} 
-\photo[70pt][0.4pt]{IMG_0130.png}
+\photo[75pt][0.4pt]{photo.png}
 
 %\nopagenumbers{}
 
@@ -37,19 +37,20 @@
 %\cvitem{Family name}{\emph{Trebler}}
 %\cvitem{First name}{\emph{Andrey}}
 \cvitem{Date of birth}{\emph{05/04/1986}}
-\cvitem{Citizenship}{\emph{Norwegian}}
-\cvitem{Marital status}{\emph{Married}}
+\cvitem{Citizenship}{\emph{Norwegian}, originally from \emph{Kazakhstan}}
+\cvitem{Marital status}{\emph{Married}, \emph{father of 3}}
 
 %\section{Professional Interests} 
 %\cvitem{}{Software development; Mathematical modeling and simulations; control systems and automation; computer graphics}
 
 \section{Key Qualifications} 
-\cvitem{}{Software development; mathematical modeling and numerical calculations; simulation software and real-time simulators; computer graphics}
+% \cvitem{}{Software development; mathematical modeling and numerical calculations; simulation software and real-time simulators; computer graphics}
+\cvitem{}{Experienced *nix-oriented developer with passion for backend, system design, and design of APIs; interest in development of rich reactive web applications; and fun of using advanced features of Kubernetes for modern containerized deployment}
 
 \section{Work Experience}
-\cventry{01/2019\ldots{}}{Full Stack Developer / Cloud Architect}{eDrilling AS}{Stavanger, Norway}{}{Team lead for Product Development. Design and development of (micro-)services, RESTFul and WebSocket APIs, web applications with Kubernetes deployment (cloud/on-premise)\newline{}%
+\cventry{01/2019--03/2022}{Full Stack Developer / Cloud Architect}{eDrilling}{Stavanger, Norway}{}{Team lead and software architect responsible for transition to cloud and design of modern APIs. Development and deployment of higly available and scalable Kubernetes-native systems based on microservices architectecture. Design and implementation of HTTP REST(ful), SSE and WebSocket APIs. Development of reactive web applications\newline{}%
 \begin{itemize}%
-\item Backend: \texttt{TypeScript/Node.js (ES2020)}, \texttt{Go}, \texttt{Python}, \texttt{C++17/Qt}
+\item Backend: \texttt{TypeScript/node.js (ES2021)}, \texttt{Go}, \texttt{Python}, \texttt{C++17/Qt}
 %\item Desktop: \texttt{C++17/Qt}
 \item Frontend: \texttt{TypeScript/Vue.js (2/3)}, \texttt{TypeScript/React}
 \item DevOps: \texttt{Docker}, \texttt{Kubernetes}, \texttt{Azure}, \texttt{AWS}
@@ -77,13 +78,13 @@
 %\item Integration of control systems, equipment models, instrument models, I/O interfaces and 3D visualization
 %\item Application of in-house downhole model to research and training projects
 \end{itemize}}
-\cventry{06/2010--06/2013}{PhD Research Fellow (\emph{doktorgradsstipendiat})}{University of Oslo---UiO}{Oslo}{Department of Geosciences, Section for Meteorology and Oceanography}{Research on project \emph{Sources of Greenhouse Gases in East Asia (SOGG--EA)}\newline{}%
+% \cventry{06/2010--06/2013}{PhD Research Fellow (\emph{doktorgradsstipendiat})}{University of Oslo---UiO}{Oslo}{Department of Geosciences, Section for Meteorology and Oceanography}{Research on project \emph{Sources of Greenhouse Gases in East Asia (SOGG--EA)}\newline{}%
 %funded by Research Council of Norway \newline{}%
 %\begin{itemize}%  
 %\item Development of mathematical models (in \texttt{Fortran} and \texttt{C/C++}) for determining emission sources
 %\item Data assimilation, analysis and visualisation (MATLAB, OpenGL)
 %\end{itemize}
-}
+% }
 \cventry{10/2007--01/2008}{Software Test Engineer}{ABBYY}{Moscow}{Mobile software testing group}{Gray-box testing of applications for Symbian and Windows Mobile mobile operating systems \newline{}%
 %\begin{itemize}%
 %\item Manual and semi-automatic testing of software on mobile devices
@@ -113,16 +114,16 @@
 %\cventry{09/1993--06/2003}{Secondary Education: Economic--Mathematical Lyceum \#9}{}{Astana, Kazakhstan; GPA:~4.9~(out of 5.0)}{}{}
 
 \section{Programming skills}
-\cvitemwithcomment{}{GNU/Linux, MacOS, Windows}{}
-\cvitemwithcomment{}{\emph{Programming}}{\emph{TypeScript/JavaScript (ES2020)}, \emph{Node.js/Deno}, 
-\emph{Go}, \emph{C99}, \emph{C++17}, \emph{Bash}, \emph{HTML/CSS/SASS}}
+\cvitemwithcomment{}{GNU/Linux, macOS, OpenBSD}{}
+\cvitemwithcomment{}{\emph{Programming}}{\emph{TypeScript/JavaScript (ES2021)}, \emph{node.js/Deno}, 
+\emph{Go}, \emph{C99}, \emph{C++17}, \emph{Bash}, \emph{Python}, \emph{HTML/CSS/SASS}}
 %, \emph{QML}, \emph{Fortran}, \emph{CUDA/OpenCL}, \emph{Simatic~Step~7}, \emph{Assembler}}
 \cvitemwithcomment{}{\emph{Frameworks}}{\emph{Qt}, \emph{Vue.js}, \emph{Angular}, \emph{React}, \emph{three.js},  \emph{D3.js}, \emph{express.js}, \emph{Bulma/Bootstrap}}
 \cvitemwithcomment{}{\emph{DevOps}}{\emph{Docker}, \emph{Kubernetes}, \emph{AWS}, \emph{Azure}, \emph{DigitalOcean}, \emph{GitHub Actions}, \emph{Jenkins}}
 %\cvitemwithcomment{}{\emph{IDEs}}{\emph{Visual Studio Code}, \emph{Qt Creator}, \emph{Xcode}, \emph{Visual Studio}, \emph{Simatic Manager}}
-\cvitemwithcomment{}{\emph{Bug tracking systems}}{\emph{Jira}, \emph{TFS}, \emph{Redmine}, \emph{GitHub}}
+\cvitemwithcomment{}{\emph{Bug tracking systems}}{\emph{Jira}, \emph{Redmine}, \emph{GitHub}, \emph{TFS}}
 %\cvitemwithcomment{}{\emph{Revision control systems}}{\emph{Git}, \emph{SVN}}
-\cvitemwithcomment{}{\emph{Technologies}}{\emph{Redis}, \emph{RabbitMQ}, \emph{AMQP}, \emph{OpenAPI/Swagger}, \emph{NGINX/Traefik/HAproxy}, \emph{WebSockets}, \emph{OAuth 2.0}, \emph{Keycloak}, \emph{WebGL}, \emph{JSON-RPC}, \emph{esbuild}, \emph{webpack}}
+\cvitemwithcomment{}{\emph{Technologies}}{\emph{Redis}, \emph{RabbitMQ}, \emph{WebSockets}, \emph{AMQP}, \emph{MQTT}, \emph{SSE}, \emph{OpenAPI/Swagger}, \emph{Traefik/NGINX/HAproxy}, \emph{S3}, \emph{OAuth 2.0}, \emph{Keycloak}, \emph{WebGL}, \emph{JSON-RPC}, \emph{esbuild}, \emph{webpack}, \emph{Vite}}
 %\cvitemwithcomment{}{\emph{Simulation software}}{\emph{LabVIEW, MATLAB, SimulationX, Vortex, OpenGL, R}}
 %\cvitemwithcomment{}{\emph{Industrial protocols and tools}}{\emph{SIMBA}, \emph{Modbus}, \emph{ModSAFE}, \emph{OPC}, \emph{PROFIBUS}, \emph{PROFINET}, \emph{Proficy HMI/SCADA -- CIMPLICITY}}
 %\cvitemwithcomment{}{}{}
