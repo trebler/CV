@@ -27,6 +27,7 @@
 
 \usepackage{lastpage}
 \rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+\lfoot{\addressfont\itshape\textcolor{gray}{ver.: \directlua{tex.print(os.getenv("VERSION") or "unknown")}}}
 
 \makeatother
 
@@ -48,7 +49,7 @@
 \cvitem{}{Experienced *nix-oriented developer with passion for backend, system design, and design of APIs; interest in development of rich reactive web applications; and fun of using advanced features of Kubernetes for modern containerized deployment}
 
 \section{Work Experience}
-\cventry{01/2019--03/2022}{Full Stack Developer / Cloud Architect}{eDrilling}{Stavanger, Norway}{}{Team lead and software architect responsible for transition to cloud and design of modern APIs. Development and deployment of higly available and scalable Kubernetes-native systems based on microservices architectecture. Design and implementation of HTTP REST(ful), SSE and WebSocket APIs. Development of reactive web applications\newline{}%
+\cventry{01/2019--\ldots}{Senior Software Engineer}{eDrilling}{Stavanger, Norway}{}{Team lead and software architect responsible for transition to cloud and design of modern APIs. Development and deployment of higly available and scalable Kubernetes-native systems based on microservices architectecture. Design and implementation of HTTP REST(ful), SSE and WebSocket APIs. Development of reactive web applications\newline{}%
 \begin{itemize}%
 \item Backend: \texttt{TypeScript/node.js (ES2021)}, \texttt{Go}, \texttt{Python}, \texttt{C++17/Qt}
 %\item Desktop: \texttt{C++17/Qt}
@@ -118,12 +119,12 @@
 \cvitemwithcomment{}{\emph{Programming}}{\emph{TypeScript/JavaScript (ES2021)}, \emph{node.js/Deno}, 
 \emph{Go}, \emph{C99}, \emph{C++17}, \emph{Bash}, \emph{Python}, \emph{HTML/CSS/SASS}}
 %, \emph{QML}, \emph{Fortran}, \emph{CUDA/OpenCL}, \emph{Simatic~Step~7}, \emph{Assembler}}
-\cvitemwithcomment{}{\emph{Frameworks}}{\emph{Qt}, \emph{Vue.js}, \emph{Angular}, \emph{React}, \emph{three.js},  \emph{D3.js}, \emph{express.js}, \emph{Bulma/Bootstrap}}
+\cvitemwithcomment{}{\emph{Frameworks}}{\emph{Qt}, \emph{Vue.js}, \emph{Angular}, \emph{React}, \emph{three.js},  \emph{D3.js}, \emph{express.js}, \emph{Bulma/Bootstrap}, \emph{FastAPI}, \emph{Echo}}
 \cvitemwithcomment{}{\emph{DevOps}}{\emph{Docker}, \emph{Kubernetes}, \emph{AWS}, \emph{Azure}, \emph{DigitalOcean}, \emph{GitHub Actions}, \emph{Jenkins}}
 %\cvitemwithcomment{}{\emph{IDEs}}{\emph{Visual Studio Code}, \emph{Qt Creator}, \emph{Xcode}, \emph{Visual Studio}, \emph{Simatic Manager}}
 \cvitemwithcomment{}{\emph{Bug tracking systems}}{\emph{Jira}, \emph{Redmine}, \emph{GitHub}, \emph{TFS}}
 %\cvitemwithcomment{}{\emph{Revision control systems}}{\emph{Git}, \emph{SVN}}
-\cvitemwithcomment{}{\emph{Technologies}}{\emph{Redis}, \emph{RabbitMQ}, \emph{WebSockets}, \emph{AMQP}, \emph{MQTT}, \emph{SSE}, \emph{OpenAPI/Swagger}, \emph{Traefik/NGINX/HAproxy}, \emph{S3}, \emph{OAuth 2.0}, \emph{Keycloak}, \emph{WebGL}, \emph{JSON-RPC}, \emph{esbuild}, \emph{webpack}, \emph{Vite}}
+\cvitemwithcomment{}{\emph{Technologies}}{\emph{Redis}, \emph{MongoDB}, \emph{RabbitMQ}, \emph{WebSockets}, \emph{AMQP}, \emph{MQTT}, \emph{SSE}, \emph{OpenAPI/Swagger}, \emph{Traefik/NGINX/HAproxy}, \emph{S3}, \emph{OAuth 2.0}, \emph{Keycloak}, \emph{WebGL}, \emph{JSON-RPC}, \emph{esbuild}, \emph{webpack}, \emph{Vite}, \emph{Poetry}, \emph{pydantic}}
 %\cvitemwithcomment{}{\emph{Simulation software}}{\emph{LabVIEW, MATLAB, SimulationX, Vortex, OpenGL, R}}
 %\cvitemwithcomment{}{\emph{Industrial protocols and tools}}{\emph{SIMBA}, \emph{Modbus}, \emph{ModSAFE}, \emph{OPC}, \emph{PROFIBUS}, \emph{PROFINET}, \emph{Proficy HMI/SCADA -- CIMPLICITY}}
 %\cvitemwithcomment{}{}{}
@@ -176,14 +177,14 @@
 %\enlargethispage{15pt}
 
 \section{Select Publications}
-\cvitem{[1]}{\textbf{A. Trebler}, R. L. Thompson, and S. Eckhardt, Estimating Primary and Secondary Sources of Persistent Organic Pollutants Using Inverse Methods, \emph{Atmospheric Environment}, 2013--2015.}
+%\cvitem{[1]}{\textbf{A. Trebler}, R. L. Thompson, and S. Eckhardt, Estimating Primary and Secondary Sources of Persistent Organic Pollutants Using Inverse Methods, \emph{Atmospheric Environment}, 2013--2015.}
 %\cvitem{[2]}{J. Kim, P. Fraser, J. M\"{u}hle, S. Li, A. Manning, \textbf{A. Trebler}, A. Stohl, A. Ganesan, P. Krummel, P. Steele, T. Saito, S. Park, S.-K. Kim, M.-K. Park, T. Arnold, C. Harth, P. Salameh, Y. Yokouchi, R. Weiss, R. Prinn, and K.-R. Kim, Atmospheric verification of reported PFC emissions from the global and East Asian aluminium and semiconductor industries, 2011--2013, in preparation.}
 %\cvitem{[2]}{J. Kim, \textbf{A. Trebler}, S. Li, J. M\"{u}hle, S. Park, M. Park, S. Kim, T. Arnold, C. M. Harth, P. Salameh, A. Stohl, R. F. Weiss, and K. Kim, ``Emissions of HFCs in East Asia: Consumption or Production?'', in \emph{AGU Fall Meeting Abstracts}, 2011, \url{http://adsabs.harvard.edu/abs/2011AGUFM.A11E0125K}.}
 %\cvitem{[4]}{J. Kim, P. Fraser, J. M\"{u}hle, S. Li, A. Manning, \textbf{A. Trebler}, A. Stohl, A. Ganesan, P. Krummel, P. Steele, T. Saito, S. Park, S. Kim, M. Park, T. Arnold, C. Harth, P. Salameh, Y. Yokouchi, R. Weiss, R. Prinn, and K. Kim, ``Emissions of Tetrafluoromethane and Hexafluoroethane: Balancing Anthropogenic Budgets from Atmospheric Measurements,'' in \emph{Earth System Research Laboratory Global Monitoring Annual Conference}, (Boulder, Colorado), 2012, \url{http://www.esrl.noaa.gov/gmd/annualconference/previous/2012/abs.php?refnum=102-120409-A}.}
-\cvitem{[2]}{\textbf{A. Trebler}, A. Stohl, and P. Seibert, ``Identification of Greenhouse Gas Emission Sources Using Analytical Inverse Method,'' in \emph{Algorithmic Analysis of Unstable Problems: Abstracts of the International Conference Dedicated to the Memory of V. K. Ivanov}, Institute of Mathematics and Mechanics, Ural Branch of the Russian Academy of Sciences, Ekaterinburg, Russia, 2011, \url{http://aanz.imm.uran.ru/aanz/AANZ-2011-final.pdf}.}
+\cvitem{[1]}{\textbf{A. Trebler}, A. Stohl, and P. Seibert, ``Identification of Greenhouse Gas Emission Sources Using Analytical Inverse Method,'' in \emph{Algorithmic Analysis of Unstable Problems: Abstracts of the International Conference Dedicated to the Memory of V. K. Ivanov}, Institute of Mathematics and Mechanics, Ural Branch of the Russian Academy of Sciences, Ekaterinburg, Russia, 2011, \url{http://aanz.imm.uran.ru/aanz/AANZ-2011-final.pdf}.}
 %\cvitem{[6]}{J. Kim, S. Li, A. Stohl, A. Manning, \textbf{A. Trebler}, S. Park, F. Jin,  S.-K. Kim, M.-K. Park, J. M\"{u}hle, R. Weiss, and K.-R. Kim, ``Measurements of Greenhouse Gases at Gosan (Jeju Island,  Korea) for Regional Analysis of Emissions in East Asia,'' in \emph{AGU Chapman Conference on  Advances in Lagrangian Modeling of the Atmosphere}, Grindelwald, Switzerland, 2011, \url{http://www.empa.ch/plugin/template/empa/*/113661}.}
-\cvitem{[3]}{\textbf{Andrey Trebler}, On Cascades of Bifurcations Leading to Chaos in Several Nonlinear Dissipative Systems of ODEs, \emph{Communications in Nonlinear Science and Numerical Simulation}, vol.~15, no.~10, pp.~2974--2986, 2010, \href{http://dx.doi.org/10.1016/j.cnsns.2009.11.019}{doi: 10.1016/j.cnsns.2009.11.019}.}
-\cvitem{[4]}{\textbf{Andrey Trebler}, A Transition to Chaos in Rucklidge Model of Double Convection, in \emph{CIMCA '08: Proceedings of the 2008 International Conference on Computational Intelligence for Modelling Control \& Automation}, 2008, IEEE Computer Society, pp.~952--957, \href{http://dx.doi.org/10.1109/CIMCA.2008.46}{doi: 10.1109/CIMCA.2008.46}.}
+\cvitem{[2]}{\textbf{Andrey Trebler}, On Cascades of Bifurcations Leading to Chaos in Several Nonlinear Dissipative Systems of ODEs, \emph{Communications in Nonlinear Science and Numerical Simulation}, vol.~15, no.~10, pp.~2974--2986, 2010, \href{http://dx.doi.org/10.1016/j.cnsns.2009.11.019}{doi: 10.1016/j.cnsns.2009.11.019}.}
+\cvitem{[3]}{\textbf{Andrey Trebler}, A Transition to Chaos in Rucklidge Model of Double Convection, in \emph{CIMCA '08: Proceedings of the 2008 International Conference on Computational Intelligence for Modelling Control \& Automation}, 2008, IEEE Computer Society, pp.~952--957, \href{http://dx.doi.org/10.1109/CIMCA.2008.46}{doi: 10.1109/CIMCA.2008.46}.}
 %\cvitem{[9]}{N. M. Evstigneev, N. A. Magnitskii, and \textbf{A. A. Trebler}, Nonlinear Dynamics of a Laminar--Turbulent Transition in a 3D Problem on the Motion of a Fluid Behind a Ledge, in: \emph{Proceedings of the Conference ``Theory and Practice of the System Analysis''}, Ribinsk (Russia), 2010, in Russian.}
 %\cvitem{[10]}{\textbf{Andrey Trebler}, On Classification of Attractors in Nonlinear Dissipative Systems of ODEs, \emph{Dynamics of Heterogeneous Systems, Transitions of the Institute for System Analysis, Russian Academy of Science}, 2009, vol.~44, pp.~123--144, in Russian, \url{http://www.isa.ru/proceedings/images/documents/2009-44/126-146.pdf}.}
 %\cvitem{[11]}{\textbf{Andrey Trebler}, On Regular and Singular Attractors in Dissipative Systems of Nonlinear ODEs, in: \emph{Proceedings of the International Multiconference ``Control: Theory and Systems''}, Moscow (Russia), 2009, pp.~32--36, in Russian.}

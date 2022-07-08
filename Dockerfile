@@ -1,4 +1,4 @@
-FROM alpine:3.12.11 as latex
+FROM alpine:3.16.0 as latex
 
 RUN apk add --no-cache \
     texlive-luatex \
@@ -11,9 +11,17 @@ WORKDIR /cv
 
 COPY cv.tex photo.png ./
 
-RUN lualatex cv.tex \
+ARG VERSION=0.0.0
+
+ENV \
+    TEXMFCACHE=/root/.cache \
+    TEXMVAR=/root/.cache \
+    VERSION=${VERSION}
+
+RUN --mount=type=cache,target=/root/.cache \
+    lualatex cv.tex \
     && lualatex cv.tex
 
-FROM alpine:3.15.3 as final
+FROM alpine:3.16.0 as final
 
 COPY --from=compile /cv/cv.pdf /
