@@ -3,16 +3,19 @@
 set -e
 
 usage() {
-    echo "Usage: $0 [-r {DOCKER_REGISTRY}] [-t {DOCKER_IMAGE_TAG}]" 1>&2
+    echo "Usage: $0 [-r {DOCKER_REGISTRY}] [-t {DOCKER_IMAGE_TAG}] [-c]" 1>&2
     exit 1
 }
-while getopts ":r:t:h" opt; do
+while getopts ":r:t:hc" opt; do
     case ${opt} in
     r)
         DOCKER_REGISTRY=$OPTARG
         ;;
     t)
         TAG=$OPTARG
+        ;;
+    c)
+        NO_CACHE=yes
         ;;
     h | [?])
         usage
@@ -24,27 +27,28 @@ shift $((OPTIND - 1))
 
 GIT_VERSION=$(git describe --long --dirty --always --tags)
 
-# BRANCH=$(git branch --show-current)
-
 if [ -z "$DOCKER_REGISTRY" ]; then
     DOCKER_REGISTRY="ghcr.io/trebler"
 fi
 
+DOCKER_BUILD_EXTRA_ARGS=()
+
+if [ -n "$NO_CACHE" ]; then
+    DOCKER_BUILD_EXTRA_ARGS+=("--no-cache" "--pull")
+fi
+
 IMAGE_NAME=cv
 
-docker buildx build -f cv.dockerfile \
-    --platform linux/arm/v6,linux/arm/v7,linux/amd64 .. \
-    --tag=$DOCKER_REGISTRY/$IMAGE_NAME:"$GIT_VERSION" \
-    --tag=$DOCKER_REGISTRY/$IMAGE_NAME:latest \
-    --build-arg VERSION="$GIT_VERSION" \
-    --push
+TAG_ARGS=(
+    "--tag=$DOCKER_REGISTRY/$IMAGE_NAME:$GIT_VERSION"
+    "--tag=$DOCKER_REGISTRY/$IMAGE_NAME:latest"
+)
 
 if [ -n "$TAG" ]; then
-    docker tag $DOCKER_REGISTRY/$IMAGE_NAME:latest $DOCKER_REGISTRY/$IMAGE_NAME:"$TAG"
-    docker push $DOCKER_REGISTRY/$IMAGE_NAME:"$TAG"
+    TAG_ARGS+=("--tag=$DOCKER_REGISTRY/$IMAGE_NAME:$TAG")
 fi
 
-if [ -n "$BRANCH" ]; then
-    docker tag $DOCKER_REGISTRY/$IMAGE_NAME:latest $DOCKER_REGISTRY/$IMAGE_NAME:"$BRANCH"
-    docker push $DOCKER_REGISTRY/$IMAGE_NAME:"$BRANCH"
-fi
+docker buildx build -f cv.dockerfile \
+    --platform linux/arm/v6,linux/arm/v7,linux/amd64 --push .. \
+    "${TAG_ARGS[@]}" \
+    "${DOCKER_BUILD_EXTRA_ARGS[@]}"
