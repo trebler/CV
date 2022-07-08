@@ -1,5 +1,5 @@
 # Final stage
-FROM nginx:1.20.2-alpine as final
+FROM nginx:1.22.0-alpine as final
 
 COPY cv.pdf /usr/share/nginx/html
 
