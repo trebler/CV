@@ -1,31 +1,17 @@
-<style>
-  .ios {
-    display: none;
+<script type="module">
+  const isIos = CSS.supports('-webkit-touch-callout', 'none');
+
+  let element;
+  if (isIos) {
+    element = document.createElement('iframe');
+    element.src = 'https://docs.google.com/gview?url=cv.trebler.dev/cv.pdf&embedded=true';
+  } else {
+    element = document.createElement('embed');
+    element.type = 'application/pdf';
+    element.src = 'cv.pdf';
   }
 
-  @supports (-webkit-touch-callout: none) {
-    .ios {
-      display: block;
-    }
+  element.width = element.height = '100%';
 
-    .non-ios {
-      display: none;
-    }
-  }
-</style>
-
-<iframe
-  class="ios"
-  src="https://docs.google.com/gview?url=cv.trebler.dev/cv.pdf&embedded=true"
-  width="100%"
-  height="100%"
-  type="application/pdf"
-></iframe>
-
-<embed
-  class="non-ios"
-  src="cv.pdf"
-  width="100%"
-  height="100%"
-  type="application/pdf"
-></embed>
+  document.body.appendChild(element);
+</script>
