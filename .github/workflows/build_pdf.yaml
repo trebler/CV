@@ -1,0 +1,26 @@
+name: Build PDF
+
+on:
+  push:
+    paths:
+      - cv.tex
+      - Dockerfile
+      - make_cv.sh
+      - photo.png
+      - docs/index.html
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create PDF file
+        run: make_cv.sh
+        shell: bash
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.0.1
+        with:
+          default_author: github_actions
+          add: docs/cv.pdf
+          message: "actions: update PDF"
