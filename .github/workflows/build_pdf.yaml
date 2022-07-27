@@ -1,4 +1,4 @@
-name: Build PDF
+name: build and deploy CV
 
 on:
   push:
