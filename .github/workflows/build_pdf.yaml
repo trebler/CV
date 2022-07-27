@@ -1,4 +1,4 @@
-name: build and deploy CV
+name: build-and-commit-pdf
 
 on:
   push:
