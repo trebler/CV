@@ -24,4 +24,8 @@ RUN --mount=type=cache,target=/root/.cache \
 
 FROM alpine:3.17.2 as final
 
-COPY --from=compile /cv/cv.pdf /
+WORKDIR /cv
+
+COPY --from=compile /cv/cv.pdf .
+
+CMD [ "cat", "cv.pdf" ]
