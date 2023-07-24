@@ -21,6 +21,9 @@ jobs:
         run: |
           echo "git_version=$(git describe --long --dirty --always --tags --abbrev=8)" >> $GITHUB_OUTPUT
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
       - name: Build image with PDF file
         uses: docker/build-push-action@v4
         with:
