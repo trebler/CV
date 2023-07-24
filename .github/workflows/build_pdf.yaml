@@ -3,40 +3,63 @@ name: build-and-commit-pdf
 on:
   push:
     branches: [main]
-    paths: [cv.tex, Dockerfile]
-    tags: ["*"]
+    paths: [cv.tex, photo.png, Dockerfile]
+    tags: [v*]
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Build PDF file
-        run: ./make_cv.sh
+
+      - name: Get git version
+        id: git_version
+        run: |
+          echo "git_version=$(git describe --long --dirty --always --tags --abbrev=8)" >> $GITHUB_OUTPUT
+
+      - name: Build image with PDF file
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          load: true
+          platforms: linux/amd64
+          build-args: VERSION=${{ steps.git_version.outputs.git_version }}
+          tags: cv
+
+      - name: Extract PDF file
+        run: |
+          docker run --rm cv >cv.pdf
+
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3
         with:
           path: cv.pdf
           if-no-files-found: error
           retention-days: 1
+
   commit-to-github-pages:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Checkout github-pages branch
         uses: actions/checkout@v3
         with:
           ref: github-pages
+
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
+        uses: actions/download-artifact@v3
         with:
           name: artifact
+
       - name: Add & Commit
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
           add: cv.pdf
