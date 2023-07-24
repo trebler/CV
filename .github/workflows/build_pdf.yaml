@@ -3,7 +3,7 @@ name: build-and-commit-pdf
 on:
   push:
     branches: [main]
-    paths: [cv.tex, photo.png, Dockerfile]
+    paths: [cv.tex, photo.png, Dockerfile, .github/workflows/build_pdf.yaml]
     tags: [v*]
   workflow_dispatch:
 
