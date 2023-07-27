@@ -1,17 +1,29 @@
+---
+layout: default
+title: CV
+---
+
 <script type="module">
-  const isIos = CSS.supports('-webkit-touch-callout', 'none');
+  const isIos = CSS.supports("-webkit-touch-callout", "none");
 
   let element;
   if (isIos) {
-    element = document.createElement('iframe');
-    element.src = 'https://docs.google.com/gview?url=cv.trebler.dev/cv.pdf&embedded=true';
+    element = document.createElement("iframe");
+    element.src =
+      "https://docs.google.com/gview?url=cv.trebler.dev/cv.pdf&embedded=true";
   } else {
-    element = document.createElement('embed');
-    element.type = 'application/pdf';
-    element.src = 'cv.pdf';
+    element = document.createElement("embed");
+    element.type = "application/pdf";
+    element.src = "cv.pdf";
   }
 
-  element.width = element.height = '100%';
+  element.classList.add("viewer");
 
   document.body.appendChild(element);
 </script>
+
+<style>
+  .viewer {
+    flex-grow: 1;
+  }
+</style>
